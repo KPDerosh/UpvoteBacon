@@ -19,7 +19,10 @@
         </div>
         <div id="content" class="content">
             <p class="contentParagraph"> 
-            Site is currently being developed. You can be sure it will be out soon enough.
+            Okay so the idea is... Do you like bacon? Well what kind of question is that.
+            Well now is your chance to prove that you like bacon, nay... love bacon. Then the real
+            question is. What kind of bacon do you like. For some it may be an easy question. For
+            others, it will be hard. We must settle the war between crispy and chewy bacon forever now before things get out of hand. 
             </p>
         </div>
     </div>
