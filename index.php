@@ -15,8 +15,10 @@
 
 <body>
     <div id="crispyBacon" style="width:50%;height:10px;float:left; display:inline-block;">
+        <img src="./images/crispy.jpg" width="100%" height="600px">
     </div>
     <div id="chewyBacon" style="width:50%; height: 10px;float:left;display:inline-block;">
+        <img src="./images/chewy.png" width="100%" height="600px" >
     </div>
     <script>
     </script>
