@@ -67,6 +67,7 @@
     <!-- JAVASCRIPT FOR THE PAGE !-->
     <script>
         $(document).ready(function(){
+            castVote();
             //Get all of the tooltips ready throughout the page once it is loaded.
             $('.upvoteText').powerTip({
                 followMouse: 'true'
@@ -83,7 +84,6 @@
         Method to show the upvote table and update the number of times voteing was initiated.
         */
         function castVote(){
-            $('#mainUpvoteTable').show();
             //Load the vote table and load that in the db.
             $.ajax({
                 type: "POST",
@@ -94,8 +94,6 @@
                 }, 
                 async:false
             });
-            console.log("Disabling cast vote button");
-            $('#castVote').hide();
         }
 
         /*
