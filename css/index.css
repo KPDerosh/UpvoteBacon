@@ -76,12 +76,13 @@ body{
 	cursor:pointer;
 }
 
-a{
+a {
 	text-decoration: none;
 }
 /* unvisited link */
 a:link {
     color: white;
+    text-decoration: none;
 }
 
 /* visited link */
@@ -92,6 +93,7 @@ a:visited {
 /* mouse over link */
 a:hover {
     color: white;
+    text-decoration: none;
 }
 
 /* selected link */

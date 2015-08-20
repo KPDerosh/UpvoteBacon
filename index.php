@@ -97,7 +97,7 @@
             //Get all of the tooltips ready throughout the page once it is loaded.
             $('.upvoteText').powerTip({
                 followMouse: 'true'
-            }).data('powertip', '<div style="width:500px">Click "Cast Vote" to bring up the voting menu. Then choose which team you want to become a part of.');
+            }).data('powertip', '<div style="width:450px">Click "Cast Vote" to bring up the voting menu. Then choose which team.');
             $('.upvoteChewy').powerTip({
                 followMouse: 'true'
             }).data('powertip', '<div>Upvote Chewy!!!!</div>');
@@ -118,7 +118,8 @@
                 url: "ajaxFunctions.php", //Relative or absolute path to response.php file
                 data:  { action: 'updatePageLoad' },
                 success: function(data) {
-                }
+                }, 
+                async:false
             });
             console.log("Disabling cast vote button");
             $('#castVote').hide();
@@ -134,7 +135,9 @@
                 url: "ajaxFunctions.php", //Relative or absolute path to response.php file
                 data:  { action: 'upvoteChewy' },
                 success: function(data) {
-                }
+
+                },
+                async:false
             });
             window.location.replace("./stats.php");
         }
@@ -149,9 +152,10 @@
                 url: "ajaxFunctions.php", //Relative or absolute path to response.php file
                 data:  { action: 'upvoteCrispy' },
                 success: function(data) {
-                }
+                }, async:false
             });
             window.location.replace("./stats.php");
+            
         }
     </script>
     <script src="./js/bootstrap.min.js"></script>

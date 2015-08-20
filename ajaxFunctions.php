@@ -24,47 +24,54 @@
         $dbhost = 'localhost';
         $dbuser = 'kderosha';
         $dbpass = 'ilovebacon';
-        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
+        $dbname = 'bacon';
+        $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
         if(!$connection){
-            die('Could not connect: '.mysql_error());
+            die('Could not connect: '.mysqli_connect_error());
         }
-        mysql_select_db('bacon', $connection) or die('Could not select database');
-        mysql_query("UPDATE upvotes SET page_loads = page_loads + 1");
-        mysql_close($connection);
+        $sql = "UPDATE upvotes SET page_loads = page_loads + 1";
+        if($connection->query($sql) === TRUE){
+            echo "Record successfully changed";
+        } else {
+            echo "Error updateing record:".$connection->error;
+        }
+        $connection->close();
     }
 
     function upvoteChewy(){
         $dbhost = 'localhost';
         $dbuser = 'kderosha';
         $dbpass = 'ilovebacon';
-        echo "Variables Set";
-        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
-        echo "Connected to db.";
+        $dbname = 'bacon';
+        $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
         if(!$connection){
-            die('Could not connect: '.mysql_error());
+            die('Could not connect: '.mysqli_connect_error());
         }
-        echo "Made it passed error.";
-        mysql_select_db('bacon', $connection) or die('Could not select database');
-        echo "Selected dbBacon";
-        mysql_query("UPDATE upvotes SET chewy_upvotes = chewy_upvotes + 1");
-        mysql_close($connection);
+        $sql = "UPDATE upvotes SET chewy_upvotes = chewy_upvotes + 1";
+        if($connection->query($sql) === TRUE){
+            echo "Record successfully changed";
+        } else {
+            echo "Error updateing record:".$connection->error;
+        }
+        $connection->close();
     }
 
     function upvoteCrispy(){
         $dbhost = 'localhost';
         $dbuser = 'kderosha';
         $dbpass = 'ilovebacon';
-        echo "Variables Set";
-        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
-        echo "Connected to db.";
+        $dbname = 'bacon';
+        $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
         if(!$connection){
-            die('Could not connect: '.mysql_error());
+            die('Could not connect: '.mysqli_connect_error());
         }
-        echo "Made it passed error.";
-        mysql_select_db('bacon', $connection) or die('Could not select database');
-        echo "Selected dbBacon";
-        mysql_query("UPDATE upvotes SET crispy_upvotes = crispy_upvotes + 1");
-        mysql_close($connection);
+        $sql = "UPDATE upvotes SET crispy_upvotes = crispy_upvotes + 1";
+        if($connection->query($sql) === TRUE){
+            echo "Record successfully changed";
+        } else {
+            echo "Error updateing record:".$connection->error;
+        }
+        $connection->close();
     }
 
     function getStats(){

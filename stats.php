@@ -54,8 +54,7 @@
 <body>
     <div id="header" class="header">
         <div id="logo" class="logo">
-        <a href="./index.php">
-        Upvote Bacon Dot COM</a>
+        <a href="./index.php">Upvote Bacon Dot COM</a>
         </div>
         <div id="navbarOptions" class="navbar">
             <a href="./index.php">Upvote the bacon /</a>
