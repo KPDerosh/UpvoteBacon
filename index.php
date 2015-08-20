@@ -52,13 +52,13 @@
             <table id="vs" class="vsContent">
                 <tr>
                     <th onclick="upvoteChewy()" class="chewyInfoHeader">
-                        Crispy
+                        Chewy
                     </th>
                     <th style="font-size:3em; text-align:center;">
                         VS
                     </th>
                     <th onclick="upvoteCrispy()" class="crispyInfoHeader">
-                        Chewy
+                        Crispy
                     </th>
                 </tr>
             </table>
