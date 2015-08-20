@@ -59,6 +59,7 @@
         <div id="navbarOptions" class="navbar">
             <a href="./index.php">Upvote the bacon /</a>
             <a href="./donate.php">Donate /</a>
+            <a href="./stats.php">Stats</a>
         </div>
     </div>
    
@@ -98,16 +99,16 @@
         console.log(crispyUps);
         var data = [
             {
-                value: chewyUps,
-                color:"#F7464A",
-                highlight: "#FF5A5E",
-                label: "Chewy"
-            },
-            {
                 value: crispyUps,
                 color: "#46BFBD",
                 highlight: "#5AD3D1",
                 label: "Crispy"
+            },
+            {
+                value: chewyUps,
+                color:"#F7464A",
+                highlight: "#FF5A5E",
+                label: "Chewy"
             }
         ]
         var ctx = document.getElementById("upvoteChart").getContext("2d");

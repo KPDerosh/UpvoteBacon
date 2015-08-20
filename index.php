@@ -26,6 +26,7 @@
         <div id="navbarOptions" class="navbar">
             <a href="#upvote" onclick="castVote()">Upvote the bacon /</a>
             <a href="./donate.php">Donate /</a>
+            <a href="./stats.php">Stats </a>
         </div>
     </div>
 
