@@ -7,7 +7,6 @@
     
     <title>Upvote Statistics</title>
     <!--Local Includes!-->
-    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/stats.css">
     <script src="./css/charts/Chart.Core.js"></script>
     <script src="./css/charts/Chart.Doughnut.js"></script>
@@ -52,45 +51,59 @@
     $conn->close();
 ?>
 <body>
-    <div id="header" class="header">
-        <div id="logo" class="logo">
-        <a href="./index.php">Upvote Bacon Dot COM</a>
-        </div>
-        <div id="navbarOptions" class="navbar">
-            <a href="./index.php">Upvote the bacon /</a>
-            <a href="./donate.php">Donate /</a>
-            <a href="./stats.php">Stats</a>
+  <div style=" width:75%; margin:auto;">
+        <!--Navigation bar !-->
+        <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Upvote Teh Bacon</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./index.php">Upvote</a></li>
+                        <li><a href="./stats.php">Bacon Statistics</a></li>
+                        <li><a href="./donate.php">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="webpageContentDiv" class="webpageContent">  
+            <table id="vs" class="vsContent">
+                <tr>
+                    <th class="chewyInfoHeader">
+                        Chewy
+                    </th>
+                    <th class="crispyInfoHeader">
+                        Crispy
+                    </th>
+                </tr>
+                <tr >
+                    <td id="chewyUpvotes" class="upvotesTd">
+                        <?php
+                            echo '<div id="chewyUpvotes">'.$chewyUpvotes.'</div>';
+                        ?>
+                    </td>
+                    <td class="upvotesTd">
+                        <?php
+                            echo '<div id="crispyUpvotes">'.$cripsyUpvotes.'</div>';
+                        ?>
+                    </td>
+                </tr>
+                 <tr>
+                    <td style="padding: 20px 0px 0px 0px;" colspan="2">
+                        <canvas id="upvoteChart" style="width:100%;"></canvas>
+                    </td>
+                </tr>    
+            </table>
         </div>
     </div>
-   
-    <table id="vs" class="vsContent">
-        <tr>
-            <th class="chewyInfoHeader">
-                Chewy
-            </th>
-            <th class="crispyInfoHeader">
-                Crispy
-            </th>
-        </tr>
-        <tr >
-            <td id="chewyUpvotes" class="upvotesTd">
-                <?php
-                    echo '<div id="chewyUpvotes">'.$chewyUpvotes.'</div>';
-                ?>
-            </td>
-            <td class="upvotesTd">
-                <?php
-                    echo '<div id="crispyUpvotes">'.$cripsyUpvotes.'</div>';
-                ?>
-            </td>
-        </tr>
-         <tr>
-            <td style="padding: 20px 0px 0px 0px;" colspan="2">
-                <canvas id="upvoteChart" style="width:100%;"></canvas>
-            </td>
-        </tr>    
-    </table>
-
     <script>
     $(document).ready(function(){
         var chewyUps = $('#chewyUpvotes').text().trim();

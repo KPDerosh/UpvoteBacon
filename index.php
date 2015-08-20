@@ -17,81 +17,53 @@
     <script src="./js/jquery.powertip.js"></script>
 </head>
 
-<body>
-    <!-- Header for most pages.!-->
-    <div id="header" class="header">
-        <div id="logo" class="logo">
-            <a href="./index.php">Upvote Bacon Dot COM</a>
-        </div>
-        <div id="navbarOptions" class="navbar">
-            <a href="#upvote" onclick="castVote()">Upvote the bacon /</a>
-            <a href="./donate.php">Donate /</a>
-            <a href="./stats.php">Stats </a>
-        </div>
-    </div>
-
-    <!-- A blurb about the site telling whats going on.!-->
-    <div id="siteBlurb" class="siteBlurb">
-        Ever wondered which bacon is better/more popular, crispy or chewy? We are here to find out and we need your help.
-        <hr style="border-color: #536DFE">
-    </div>
-
-    <!-- Vs table that displays chewy vs crispy nicely!-->
-    <table id="vs" class="vsContent">
-        <tr>
-            <th class="chewyInfoHeader">
-                Crispy
-            </th>
-            <th style="font-size:3em; text-align:center;">
-                VS
-            </th>
-            <th class="crispyInfoHeader">
-                Chewy
-            </th>
-        </tr>
-    </table>
-
-    <!--Little bit of content telling people to vote!-->
-    <div id="content" class="content">
-        <p class="contentParagraph"> 
-        Okay so the idea is... Do you like bacon? Well what kind of question is that.
-        Well now is your chance to prove that you like bacon, nay... love bacon. Then the real
-        question is. What kind of bacon do you like. For some it may be an easy question. For
-        others, it will be hard. We must settle the war between crispy and chewy bacon forever now before things get out of hand. 
-        </p>
-        <hr style="border-color:#448AFF; width:50%">
-        <div style="display:inline-block; margin:auto; width:100%;text-align:center">
-        <p onclick="castVote()" id="castVote" class="upvoteText" style="color:black; font-size:3em; margin:10px 0px 10px 0px; cursor:pointer;">Cast Vote</p>
-        </div>
-    </div>
-
-    <!-- link for nav bar link to take to this part of the page.!-->
-    <a name="upvote">
-    <!-- Table to upvote which team of bacon people want to win!-->
-    <table id="mainUpvoteTable" class="upvoteTable">
-        <tr>
-            <th class="chewyInfoHeader">
-                Team Chewy
-            </th>
-            <th class="crispyInfoHeader">
-                Team Crispy
-            </th>
-        </tr>
-        <tr>
-            <td class="chewyInfo">
-                <div style="margin:auto; width:50px">
-                   <img onclick="upvoteChewy()" class="upvoteButton upvoteChewy" src="./images/upvote.png" width="50" height="50">
+<body class="body">
+    <div style=" width:75%; margin:auto; background-color:#FFFFFF">
+        <!--Navigation bar !-->
+        <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Upvote Teh Bacon</a>
                 </div>
-            </td>
-            <td class="crispyInfo">
-                <div style="margin:auto; width:50px">
-                    <img onclick="upvoteCrispy()" class="upvoteButton upvoteCrispy" src="./images/upvote.png" width="50" height="50">
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./index.php">Upvote</a></li>
+                        <li><a href="./stats.php">Bacon Statistics</a></li>
+                        <li><a href="./donate.php">Donate</a></li>
+                    </ul>
                 </div>
-            </td>
-        </tr>
-    </table>
-    </a>
+            </div>
+        </nav>
+        
+        <div id="webpageContentDiv" class="webpageContent">  
+            <!-- A blurb about the site telling whats going on.!-->
+            <div id="siteBlurb" class="baconQuestion">
+                Which type of bacon do you prefer?
+                <hr style="border-color: #536DFE">
+            </div>
 
+            <!-- Vs table that displays chewy vs crispy nicely!-->
+            <table id="vs" class="vsContent">
+                <tr>
+                    <th onclick="upvoteChewy()" class="chewyInfoHeader">
+                        Crispy
+                    </th>
+                    <th style="font-size:3em; text-align:center;">
+                        VS
+                    </th>
+                    <th onclick="upvoteCrispy()" class="crispyInfoHeader">
+                        Chewy
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
     <!-- JAVASCRIPT FOR THE PAGE !-->
     <script>
         $(document).ready(function(){

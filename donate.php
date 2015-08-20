@@ -13,25 +13,40 @@
 </head>
 
 <body>
-    <div id="header" class="header">
-        <div id="logo" class="logo">
-        <a href="./index.php">
-        Upvote Bacon Dot COM</a>
-        </div>
-        <div id="navbarOptions" class="navbar">
-            <a href="./index.php">Upvote the bacon /</a>
-            <a href="./donate.php">Donate /</a>
-        </div>
-    </div>
-    <div id="siteBlurb" class="siteBlurb">
-        Help support the bacon. We are finding out which bacon is more popular but it isn't cheap. We appreciate any donations to keep the servers up and running. 
-        <hr style="border-color: #536DFE">
-    </div>
+   <div style=" width:75%; margin:auto;">
+        <!--Navigation bar !-->
+        <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Upvote Teh Bacon</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.php">Upvote</a></li>
+                        <li><a href="./stats.php">Bacon Statistics</a></li>
+                        <li class="active"><a href="./donate.php">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="webpageContentDiv" class="webpageContent">  
+            <div id="siteBlurb" class="siteBlurb">
+                Help support the bacon. We are finding out which bacon is more popular but it isn't cheap. We appreciate any donations to keep the servers up and running. 
+                <hr style="border-color: #536DFE">
+            </div>
 
-    <div id="donations" class="siteBlurb">
-        Google Wallet: kpderosh@mtu.edu
+            <div id="donations" class="siteBlurb">
+                Google Wallet: kpderosh@mtu.edu
+            </div>
+        </div>
     </div>
-
     <script>
     </script>
     <script src="./js/bootstrap.min.js"></script>
