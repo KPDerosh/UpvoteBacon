@@ -2,26 +2,99 @@ body{
 	margin:0px;
 	padding:0px;
 }
-.header{
-	height:50px;
-	background-color: #D32F2F;
-	border: 1px solid #536DFE;
 
-	/*text*/
-	color:white;
-	font-size: 2.5em;
-	text-align: center;
+.header{
+	height:100px;
+	background-color:#1d2023;
+	margin:20px 10% 0px 10%;
+	padding:40px 5% 0px 5%;
 }
 
-.container{
-	background-color: #FFCDD2;
+.logo{
+	display:inline-block;
+	float:left;
+	font-size: 2em;
+	color:white;
+}
+
+.navbar{
+	display:inline-block;
+	margin:12px 5% 0px 5%;
+	font-size: 1em;
+	color:white;
+}
+
+.siteBlurb{
+	background-color:#1d2023;
+	margin:0px 10% 0px 10%;
+	padding:30px 10% 30px 10%;
+
+	/*text decoration*/
+	text-align: center;
+	font-size: 2em;
+	color:white;
+}
+
+.vsContent{
+	height:100px;
+	margin:10px 10% 0px 10%;
+	width:80%;
+}
+
+.chewyInfoHeader{
+	text-align: center;
+	background-color: #1d2023;
+	height:40px;
+	/*font decoration*/
+	font-size: 2em;
+	color:white;
+}
+.crispyInfoHeader{
+	text-align:center;
+	background-color: #1d2023;
+	height:40px;
+	/*font decoration*/
+	font-size: 2em;
+	color:white;
 }
 
 .content{
-	padding: 10px 5px 10px 5px;
+	width:80%;
+	margin:auto;
+}
+.contentParagraph{
+	padding:30px 25% 30px 25%;
 }
 
-.contentParagraph{
-	color:black;
-	margin:0px;
+.upvoteTable{
+	width:80%;
+	margin:auto;
+	display:none;
+}
+
+.upvoteButton{
+	cursor:pointer;
+}
+
+a{
+	text-decoration: none;
+}
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+}
+
+/* selected link */
+a:active {
+    color: white;
 }

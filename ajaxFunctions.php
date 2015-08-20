@@ -6,12 +6,10 @@
             $action = $_POST["action"];
             /* switch statement for calling methods.*/
             switch($action) { 
-                case "getChampionID()": getChampionID(); break;
-                case "getSummonerID()": getSummonerID(); break;
-                case "getRanked5v5Solo()": getRanked5v5Solo(); break;
-                case "getCurrentGame()": getCurrentGame();break;
-                case "getStats()": getStats();break;
-                case "getLeague()": getLeague(); break;
+                case "updatePageLoad": updatePageLoad(); break;
+                case "upvoteChewy": upvoteChewy(); break;
+                case "upvoteCrispy": upvoteCrispy(); break;
+                case "getStats" : getStats(); break;
             }
         }
     }
@@ -22,126 +20,90 @@
     }
 
     /*get the summoners league that was passed in.*/
-    function getLeague(){
-        header("Content-type: application/json");
-        $sumID = $_POST["sumID"];
-        $region = $_POST["region"];
-        switch($region) { //Switch case for value of action
-            case "NA1": $region = "na"; break;
-            case "BR1": $region = "br"; break;
-            case "EUW1": $region = "euw"; break;
-            case "EUN1": $region = "eune"; break;
-            case "KR": $region = "kr"; break;
-            case "LA1": $region = "lan"; break;
-            case "LA2": $region = "las"; break;
-            case "OC1": $region = "oce"; break;
-            case "RU": $region = "ru"; break;
-            case "TR1": $region = "tr"; break;
+    function updatePageLoad(){
+        $dbhost = 'localhost';
+        $dbuser = 'kderosha';
+        $dbpass = 'ilovebacon';
+        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
+        if(!$connection){
+            die('Could not connect: '.mysql_error());
         }
-        $currentGameStats = file_get_contents('https://' . $region . '.api.pvp.net/api/lol/'.$region.'/v2.5/league/by-summoner/'.$sumID.'/entry?api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($currentGameStats);
-        echo $data;
+        mysql_select_db('bacon', $connection) or die('Could not select database');
+        mysql_query("UPDATE upvotes SET page_loads = page_loads + 1");
+        mysql_close($connection);
     }
 
-    function getCurrentGame(){
-        header("Content-type: application/json");
-        $sumID = $_POST["sumID"];
-        $region = $_POST["region"];
-        $region2;
-        switch($region) { //Switch case for value of action
-            case "NA1": $region2 = "na"; break;
-            case "BR1": $region2 = "br"; break;
-            case "EUW1": $region2 = "euw"; break;
-            case "EUN1": $region2 = "eune"; break;
-            case "KR": $region2 = "kr"; break;
-            case "LA1": $region2 = "lan"; break;
-            case "LA2": $region2 = "las"; break;
-            case "OC1": $region2 = "oce"; break;
-            case "RU": $region2 = "ru"; break;
-            case "TR1": $region2 = "tr"; break;
+    function upvoteChewy(){
+        $dbhost = 'localhost';
+        $dbuser = 'kderosha';
+        $dbpass = 'ilovebacon';
+        echo "Variables Set";
+        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
+        echo "Connected to db.";
+        if(!$connection){
+            die('Could not connect: '.mysql_error());
         }
-        $currentGameStats = file_get_contents('https://'.$region2.'.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/' . $region . '/' . $sumID . '?api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($currentGameStats);
-        echo $data;
+        echo "Made it passed error.";
+        mysql_select_db('bacon', $connection) or die('Could not select database');
+        echo "Selected dbBacon";
+        mysql_query("UPDATE upvotes SET chewy_upvotes = chewy_upvotes + 1");
+        mysql_close($connection);
     }
 
-    //Function to get list of champions and their id's.
-    function getChampionID(){
-        header("Content-type: application/json");
-        $championData = file_get_contents('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($championData);
-        echo $data;
-    }
-
-    //Get SummonerID
-    function getSummonerID(){
-        header("Content-type: application/json");
-        $sumName = $_POST["sumName"];
-        $region = $_POST["region"];
-        switch($region) { //Switch case for value of action
-            case "NA1": $region2 = "na"; break;
-            case "BR1": $region2 = "br"; break;
-            case "EUW1": $region2 = "euw"; break;
-            case "EUN1": $region2 = "eune"; break;
-            case "KR": $region2 = "kr"; break;
-            case "LA1": $region2 = "lan"; break;
-            case "LA2": $region2 = "las"; break;
-            case "OC1": $region2 = "oce"; break;
-            case "RU": $region2 = "ru"; break;
-            case "TR1": $region2 = "tr"; break;
+    function upvoteCrispy(){
+        $dbhost = 'localhost';
+        $dbuser = 'kderosha';
+        $dbpass = 'ilovebacon';
+        echo "Variables Set";
+        $connection = mysql_connect($dbhost, $dbuser, $dbpass);
+        echo "Connected to db.";
+        if(!$connection){
+            die('Could not connect: '.mysql_error());
         }
-        $summonerID = file_get_contents('https://'.$region2.'.api.pvp.net/api/lol/'. $region2 .'/v1.4/summoner/by-name/'. $sumName .'?api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($summonerID);
-        echo $data;
+        echo "Made it passed error.";
+        mysql_select_db('bacon', $connection) or die('Could not select database');
+        echo "Selected dbBacon";
+        mysql_query("UPDATE upvotes SET crispy_upvotes = crispy_upvotes + 1");
+        mysql_close($connection);
     }
 
-    /*method to get ranked stats. 
-        --add option to pick what season to choose from--
-        */
     function getStats(){
         header("Content-type: application/json");
-        $sumID = $_POST["sumID"];
-        $region = $_POST["region"];
-        $seasonString = $_POST["seasonString"];
 
-        switch($region) { //Switch case for value of action
-            case "NA1": $region = "na"; break;
-            case "BR1": $region = "br"; break;
-            case "EUW1": $region = "euw"; break;
-            case "EUN1": $region = "eune"; break;
-            case "KR": $region = "kr"; break;
-            case "LA1": $region = "lan"; break;
-            case "LA2": $region = "las"; break;
-            case "OC1": $region = "oce"; break;
-            case "RU": $region = "ru"; break;
-            case "TR1": $region = "tr"; break;
+         //Get the result with upvotes;
+        $servername = "localhost";
+        $username = "kderosha";
+        $password = "ilovebacon";
+        $dbname = "bacon";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+
+        $sql = "SELECT page_loads, chewy_upvotes, crispy_upvotes FROM upvotes";
+        $result = $conn->query($sql);
+        $chewyUpvotes;
+        $crispyUpvotes;
+        $page_loads;
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $chewyUpvotes = $row["chewy_upvotes"];
+                $cripsyUpvotes = $row["crispy_upvotes"];
+                $page_loads = $row["page_loads"];
+            }
+        } else {
+            echo "0 results";
         }
-        $currentGameStats = file_get_contents('https://'.$region.'.api.pvp.net/api/lol/'.$region.'/v1.3/stats/by-summoner/'.$sumID.'/ranked?season='.$seasonString.'&api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($currentGameStats);
+        $conn->close();
+        $json = "{";
+        $json = $json.'"page_loads":'.$page_loads.',';
+        $json = $json.'"chewy":'.$chewyUpvotes.',';
+        $json = $json.'"crispy":'.$cripsyUpvotes;
+        $json = $json.'}';
+        $data = json_encode($json);
         echo $data;
     }
-
-    /*method to get ranked stats 
-        -- I think this only returns ranked match history--*/
-    function getRanked5v5Solo(){
-        header("Content-type: application/json");
-        $sumID = $_POST["sumID"];
-        $region = $_POST["region"];
-        switch($region) { //Switch case for value of action
-            case "NA1": $region = "na"; break;
-            case "BR1": $region = "br"; break;
-            case "EUW1": $region = "euw"; break;
-            case "EUN1": $region = "eune"; break;
-            case "KR": $region = "kr"; break;
-            case "LA1": $region = "lan"; break;
-            case "LA2": $region = "las"; break;
-            case "OC1": $region = "oce"; break;
-            case "RU": $region = "ru"; break;
-            case "TR1": $region = "tr"; break;
-        }
-        $matchHistoryData = file_get_contents('https://'.$region.'.api.pvp.net/api/lol/'.$region.'/v2.2/matchhistory/' . $sumID . '?&beginIndex=0&endIndex=15&api_key=6955669d-0d51-41b0-8b09-c05f4a0468e9');  
-        $data = json_encode($matchHistoryData);
-        echo $data;
-    }
-
 ?>
