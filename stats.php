@@ -50,8 +50,8 @@
     }
     $conn->close();
 ?>
-<body>
-  <div style=" width:75%; margin:auto;">
+<body class="body">
+  <div style=" width:75%; margin:auto; background-color:#FFFFFF">
         <!--Navigation bar !-->
         <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
             <div class="container">
@@ -66,8 +66,8 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="./index.php">Upvote</a></li>
-                        <li><a href="./stats.php">Bacon Statistics</a></li>
+                        <li><a href="./index.php">Upvote</a></li>
+                        <li class="active"><a href="./stats.php">Bacon Statistics</a></li>
                         <li><a href="./donate.php">Donate</a></li>
                     </ul>
                 </div>

@@ -12,8 +12,8 @@
     <script src="./js/jquery.powertip.js"></script>
 </head>
 
-<body>
-   <div style=" width:75%; margin:auto;">
+<body class="body">
+   <div style=" width:75%; margin:auto; background-color:#FFFFFF">
         <!--Navigation bar !-->
         <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
             <div class="container">
