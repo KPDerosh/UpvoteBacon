@@ -4,6 +4,7 @@
         /*if the action is set to call a method call it.*/
         if (isset($_POST["action"]) && !empty($_POST["action"])) { //Checks if action value exists
             $action = $_POST["action"];
+
             /* switch statement for calling methods.*/
             switch($action) { 
                 case "updatePageLoad": updatePageLoad(); break;
@@ -39,39 +40,60 @@
     }
 
     function upvoteChewy(){
-        $dbhost = 'localhost';
-        $dbuser = 'kderosha';
-        $dbpass = 'ilovebacon';
-        $dbname = 'bacon';
-        $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-        if(!$connection){
-            die('Could not connect: '.mysqli_connect_error());
-        }
-        $sql = "UPDATE upvotes SET chewy_upvotes = chewy_upvotes + 1";
-        if($connection->query($sql) === TRUE){
-            echo "Record successfully changed";
+        if(!isset($_COOKIE['voted'])) {
+            $dbhost = 'localhost';
+            $dbuser = 'kderosha';
+            $dbpass = 'ilovebacon';
+            $dbname = 'bacon';
+            $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+            if(!$connection){
+                die('Could not connect: '.mysqli_connect_error());
+            }
+            $sql = "UPDATE upvotes SET chewy_upvotes = chewy_upvotes + 1";
+            if($connection->query($sql) === TRUE){
+                echo "Record successfully changed";
+            } else {
+                echo "Error updateing record:".$connection->error;
+            }
+            $connection->close();
+            $cookie_name = "voted";
+            $cookie_value = "true";
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+        
+            echo "Cookie '" . $cookie_name . "' is set!<br>";
+            echo "Value is: " . $_COOKIE[$cookie_name];
         } else {
-            echo "Error updateing record:".$connection->error;
+            echo "Cookie named '" . $cookie_name . "' is set!";
         }
-        $connection->close();
+       
     }
 
     function upvoteCrispy(){
-        $dbhost = 'localhost';
-        $dbuser = 'kderosha';
-        $dbpass = 'ilovebacon';
-        $dbname = 'bacon';
-        $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-        if(!$connection){
-            die('Could not connect: '.mysqli_connect_error());
-        }
-        $sql = "UPDATE upvotes SET crispy_upvotes = crispy_upvotes + 1";
-        if($connection->query($sql) === TRUE){
-            echo "Record successfully changed";
+        if(!isset($_COOKIE['voted'])) {
+            $dbhost = 'localhost';
+            $dbuser = 'kderosha';
+            $dbpass = 'ilovebacon';
+            $dbname = 'bacon';
+            $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+            if(!$connection){
+                die('Could not connect: '.mysqli_connect_error());
+            }
+            $sql = "UPDATE upvotes SET crispy_upvotes = crispy_upvotes + 1";
+            if($connection->query($sql) === TRUE){
+                echo "Record successfully changed";
+            } else {
+                echo "Error updateing record:".$connection->error;
+            }
+            $connection->close();
+            $cookie_name = "voted";
+            $cookie_value = "true";
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+        
+            echo "Cookie '" . $cookie_name . "' is set!<br>";
+            echo "Value is: " . $_COOKIE[$cookie_name];
         } else {
-            echo "Error updateing record:".$connection->error;
+            echo "Cookie named '" . $cookie_name . "' is set!";
         }
-        $connection->close();
     }
 
     function getStats(){
