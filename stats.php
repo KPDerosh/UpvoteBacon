@@ -7,16 +7,16 @@
     
     <title>Upvote Statistics</title>
     <!--Local Includes!-->
-    <link rel="stylesheet" href="./css/stats.css">
+    <link rel="stylesheet" href="./css/Stats/stats.css">
     <script src="./css/charts/Chart.Core.js"></script>
     <script src="./css/charts/Chart.Doughnut.js"></script>
 
     <!-- Bootstrap and jquery includes!-->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/Bootstrap/bootstrap.min.css">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     
     <!--Power tip includes !-->
-    <link rel="stylesheet" type="text/css" href="./css/jquery.powertip.css">
+    <link rel="stylesheet" type="text/css" href="./css/Powertip/jquery.powertip.css">
     <script src="./js/jquery.powertip.js"></script>
 </head>
 
@@ -51,7 +51,7 @@
     $conn->close();
 ?>
 <body class="body">
-  <div style=" width:75%; margin:auto; background-color:#FFFFFF">
+  <div style=" width:75%; margin:auto; background-color:#FFFFFF; border-left: 2px solid black; border-right: 2px solid black; height:calc(100vh)">
         <!--Navigation bar !-->
         <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
             <div class="container">

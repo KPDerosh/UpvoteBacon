@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Donations</title>
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/Index/index.css">
+    <link rel="stylesheet" href="./css/Bootstrap/bootstrap.min.css">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./css/jquery.powertip.css">
-    <script src="./js/jquery.powertip.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/Powertip/jquery.powertip.css">
+    <script src="./js/Powertip/jquery.powertip.js"></script>
 </head>
 
 <body class="body">
@@ -49,6 +49,6 @@
     </div>
     <script>
     </script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/Bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

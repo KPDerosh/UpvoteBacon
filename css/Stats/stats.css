@@ -1,0 +1,69 @@
+.body{
+	background-color:#D4D9DD;
+}
+
+.webpageContent{
+	width:100%;
+	padding:0px 10% 100px 10%;
+}
+
+.baconQuestion{
+
+	/*text decoration*/
+	text-align: left;
+	font-size: 2em;
+}
+
+.vsContent{
+	height:100px;
+	width:100%;
+}
+
+.chewyInfoHeader{
+	text-align: center;
+	background-color: #1d2023;
+	height:40px;
+	/*font decoration*/
+	font-size: 2em;
+	color:white;
+}
+.crispyInfoHeader{
+	text-align:center;
+	background-color: #1d2023;
+	height:40px;
+
+	/*font decoration*/
+	font-size: 2em;
+	color:white;
+}
+
+a {
+	text-decoration: none;
+}
+/* unvisited link */
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}
+
+.upvotesTd{
+	text-align:center;
+	font-size:3em;
+	padding:20px 0px 0px 0px;
+}

@@ -7,18 +7,18 @@
     <title>Upvote The Bacon</title>
 
     <!-- custom css!-->
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/Index/index.css">
     <!-- Bootstrap !-->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/Bootstrap/bootstrap.min.css">
     <!-- jQuery !-->
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <!--Powertip javascript!-->
-    <link rel="stylesheet" type="text/css" href="./css/jquery.powertip.css">
-    <script src="./js/jquery.powertip.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/Powertip/jquery.powertip.css">
+    <script src="./js/Powertip/jquery.powertip.js"></script>
 </head>
 
 <body class="body">
-    <div style=" width:75%; margin:auto; background-color:#FFFFFF">
+    <div style=" width:75%; margin:auto; background-color:#FFFFFF;border-left: 2px solid black;border-right: 2px solid black;">
         <!--Navigation bar !-->
         <nav class="navbar navbar-default navbar-top" style="display:inline-block;width:100%; margin:auto; margin-bottom:20px;">
             <div class="container">
@@ -51,13 +51,13 @@
             <!-- Vs table that displays chewy vs crispy nicely!-->
             <table id="vs" class="vsContent">
                 <tr>
-                    <th onclick="upvoteChewy()" class="chewyInfoHeader">
+                    <th onclick="upvoteChewy()" class="chewyButton">
                         Chewy
                     </th>
                     <th style="font-size:3em; text-align:center;">
                         VS
                     </th>
-                    <th onclick="upvoteCrispy()" class="crispyInfoHeader">
+                    <th onclick="upvoteCrispy()" class="crispyButton">
                         Crispy
                     </th>
                 </tr>
@@ -126,9 +126,8 @@
                 }, async:false
             });
             window.location.replace("./stats.php");
-            
         }
     </script>
-    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/Bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
